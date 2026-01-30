@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Ta surprise 💘</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'surprise/styles.css' %}">
+</head>
+<script>
+function shareWhatsApp() {
+    const message = `
+💖 Une surprise spéciale t’attend !
+
+{{ message.sender_name }} a créé une surprise pour {{ message.receiver_name }} 💕
+
+👉 Découvre-la ici :
+${window.location.href}
+    `;
+
+    const url = "https://wa.me/?text=" + encodeURIComponent(message);
+    window.open(url, "_blank");
+}
+</script>
+<script src="{% static 'surprise/animations.js' %}"></script>
+
+
+<body>
+
+    <!-- Cœurs animés -->
+    <div class="hearts">
+        <span>❤️</span>
+        <span>💖</span>
+        <span>💕</span>
+        <span>💘</span>
+        <span>❤️</span>
+    </div>
+
+    <div class="container reveal">
+
+        <h1 class="title">
+            💖 Une surprise pour {{ message.receiver_name }}
+        </h1>
+
+        <p class="subtitle fade-delay">
+            {{ message.sender_name }} a préparé quelque chose de spécial pour toi ✨
+        </p>
+
+        <div class="photos">
+            <div class="photo-card pop">
+                <img src="{{ message.photo_sender.url }}" alt="Photo expéditeur">
+                <p>{{ message.sender_name }}</p>
+            </div>
+
+            <div class="photo-card pop delay">
+                <img src="{{ message.photo_receiver.url }}" alt="Photo destinataire">
+                <p>{{ message.receiver_name }}</p>
+            </div>
+        </div>
+
+        <div class="love-message fade-delay-2">
+            <p>
+                Depuis que je t’ai rencontré(e), chaque jour a pris une autre couleur.
+                Ton sourire illumine mes moments, et ton amour rend tout plus beau.
+            </p>
+            <p>
+                Cette page est une petite preuve de ce que je ressens pour toi 💕
+            </p>
+        </div>
+       <button class="whatsapp-share" onclick="shareWhatsApp()">
+            <span class="icon">💚</span>
+            <span class="text">Partager cette surprise</span>
+        </button>
+
+
+        <a href="/" class="back-btn fade-delay-3">
+            ⬅️ Créer une autre surprise
+        </a>
+
+    </div>
+
+</body>
+</html>
+
+

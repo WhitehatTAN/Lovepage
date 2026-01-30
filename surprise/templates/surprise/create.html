@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Crée ta surprise 💘</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'surprise/styles.css' %}">
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="title">💖 Crée ta surprise</h1>
+        <p class="subtitle">
+            Une page spéciale pour une personne spéciale ✨
+        </p>
+
+        <form method="post" enctype="multipart/form-data" class="love-form">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label for="id_sender_name">Ton nom</label>
+                {{ form.sender_name }}
+            </div>
+
+            <div class="form-group">
+                <label for="id_receiver_name">Nom de ta moitié</label>
+                {{ form.receiver_name }}
+            </div>
+
+            <div class="form-group">
+                <label for="id_photo_sender">Ta photo</label>
+                {{ form.photo_sender }}
+            </div>
+
+            <div class="form-group">
+                <label for="id_photo_receiver">Photo de ta moitié</label>
+                {{ form.photo_receiver }}
+            </div>
+
+            <button type="submit" class="submit-btn">
+                Créer la surprise ➡️💖
+            </button>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,317 @@
+/* Reset basique */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+/* Fond général */
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffe6f0, #fff0f6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4a0033;
+}
+
+/* Conteneur principal */
+.container {
+    background: white;
+    max-width: 500px;
+    width: 90%;
+    padding: 30px 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(255, 0, 128, 0.2);
+    text-align: center;
+}
+
+/* Titres */
+.title {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 15px;
+    margin-bottom: 25px;
+    color: #7a003c;
+}
+
+/* Formulaire */
+.love-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-group {
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* Champs */
+input[type="text"],
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ffc0d9;
+    outline: none;
+}
+
+input[type="text"]:focus,
+input[type="file"]:focus {
+    border-color: #ff4d94;
+}
+
+/* Bouton */
+.submit-btn {
+    margin-top: 10px;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #ff4d94, #ff80b3);
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 77, 148, 0.4);
+}
+
+/* Page résultat */
+.photos {
+    display: flex;
+    justify-content: space-around;
+    margin: 25px 0;
+}
+
+.photo-card {
+    text-align: center;
+}
+
+.photo-card img {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #ff80b3;
+}
+
+.photo-card p {
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+/* Message */
+.love-message {
+    background: #fff0f6;
+    padding: 15px;
+    border-radius: 15px;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Bouton retour */
+.back-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 20px;
+    background: #ff4d94;
+    font-size: 14px;
+}
+
+.back-btn:hover {
+    background: #e60073;
+}
+/* Apparition générale */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: reveal 1.2s ease-out forwards;
+}
+
+@keyframes reveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Délais de texte */
+.fade-delay {
+    opacity: 0;
+    animation: fade 1.5s ease forwards;
+    animation-delay: 0.8s;
+}
+
+.fade-delay-2 {
+    opacity: 0;
+    animation: fade 1.5s ease forwards;
+    animation-delay: 1.4s;
+}
+
+.fade-delay-3 {
+    opacity: 0;
+    animation: fade 1.5s ease forwards;
+    animation-delay: 2s;
+}
+
+@keyframes fade {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animation photos */
+.pop {
+    transform: scale(0.8);
+    opacity: 0;
+    animation: pop 0.8s ease-out forwards;
+    animation-delay: 1s;
+}
+
+.pop.delay {
+    animation-delay: 1.4s;
+}
+
+@keyframes pop {
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Cœurs flottants */
+.hearts span {
+    position: fixed;
+    bottom: -20px;
+    font-size: 24px;
+    animation: float 6s linear infinite;
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.hearts span:nth-child(1) { left: 10%; animation-delay: 0s; }
+.hearts span:nth-child(2) { left: 30%; animation-delay: 1s; }
+.hearts span:nth-child(3) { left: 50%; animation-delay: 2s; }
+.hearts span:nth-child(4) { left: 70%; animation-delay: 3s; }
+.hearts span:nth-child(5) { left: 90%; animation-delay: 4s; }
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-110vh);
+        opacity: 0;
+    }
+}
+
+.whatsapp-btn {
+    margin-top: 20px;
+    padding: 14px 22px;
+    background-color: #25D366;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+}
+.whatsapp-share {
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    padding: 14px 26px;
+    background: linear-gradient(135deg, #25D366, #1EBE5D);
+    color: white;
+
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.35);
+    transition: all 0.3s ease;
+}
+
+.whatsapp-share .icon {
+    font-size: 20px;
+    animation: pulse 1.5s infinite;
+}
+
+.whatsapp-share:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 15px 35px rgba(37, 211, 102, 0.45);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+.heart {
+    position: fixed;
+    top: -10px;
+    font-size: 24px;
+    animation: fall linear forwards;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+.love-message {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px 25px;
+
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 18px;
+
+    text-align: center;
+    line-height: 1.6;
+
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    overflow: hidden;
+}
+.love-message p {
+    margin-bottom: 14px;
+    letter-spacing: 0.5px;
+}
